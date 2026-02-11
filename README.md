@@ -15,6 +15,21 @@ UI de prueba tecnica para listar, filtrar y crear posts contra la API de Laravel
 VITE_API_BASE_URL=http://0.0.0.0:8000
 ```
 
+
+## Docker 
+
+Se incluye un Dockerfile y `docker-compose.yml` para facilitar pruebas locales.
+
+
+- Levantar el contenedor:
+
+
+docker compose up -d --build
+
+
+- La UI quedará disponible en `http://127.0.0.1:5173`
+
+
 2) Instalar dependencias:
 
 ```
@@ -64,24 +79,5 @@ npm test
 		- Paginación y acciones de publicar (optimistic updates / refetch).
 	- Para tests más realistas, agregar `msw` (Mock Service Worker) y simular la API Laravel localmente.
 
-	## Docker (opcional)
 
-	Se incluye un Dockerfile y `docker-compose.yml` para facilitar pruebas locales.
-
-	- Construir la imagen (puedes pasar la URL de la API con la build-arg):
-
-	```bash
-	# usando la API local en el host (Laravel corriendo en el host:8000)
-	docker compose build --build-arg VITE_API_BASE_URL=http://host.docker.internal:8000
-	```
-
-	- Levantar el contenedor:
-
-	```bash
-	docker compose up -d --build
-	```
-
-	- La UI quedará disponible en `http://127.0.0.1:5173` y las llamadas a `/api` dentro del contenedor se proxyan a `host.docker.internal:8000`.
-
-	Nota: en entornos Linux donde `host.docker.internal` no esté disponible, usa la IP del host o configura una red entre contenedores.
 
