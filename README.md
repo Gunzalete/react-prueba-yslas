@@ -59,12 +59,5 @@ npm test
 	- Render básico de la aplicación: se monta la UI dentro de un `QueryClientProvider` y se verifica que componentes principales (cabecera, estado de listado vacío, formulario de creación) se renderizan correctamente.
 	- El test mockea `fetch` para devolver una respuesta vacía ({ data: [], meta: { total: 0 } }).
 
-- Notas y siguientes pasos recomendados:
-	- Actualmente hay un test sencillo que valida el render inicial. Es recomendable agregar pruebas para:
-		- Validaciones del formulario (campos obligatorios, mensajes de error).
-		- Creación de post con manejo exitoso y errores 422 (mockear respuestas de la API).
-		- Paginación y acciones de publicar (optimistic updates / refetch).
-	- Para tests más realistas, agregar `msw` (Mock Service Worker) y simular la API Laravel localmente.
-
 
 
