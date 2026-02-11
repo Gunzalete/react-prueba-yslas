@@ -17,13 +17,20 @@ beforeEach(() => {
 
 describe('App', () => {
   it('renders list state and create form', async () => {
-    global.fetch = vi.fn(() =>
-      Promise.resolve({ ok: true, json: () => Promise.resolve({ data: [], meta: { total: 0 } }) }),
+    const baseResponse = { data: [], meta: { total: 0 } }
+    global.fetch = vi.fn((url) =>
+      Promise.resolve({ ok: true, json: () => Promise.resolve(baseResponse) }),
     )
 
     renderWithProviders(<App />)
 
     expect(await screen.findByText(/Panel editorial/i)).toBeDefined()
     expect(await screen.findByText(/No hay resultados/)).toBeDefined()
+  // simulate toggling include comments
+  const checkbox = screen.getByRole('checkbox', { name: /Incluir comentarios/i })
+  await userEvent.click(checkbox)
+  await waitFor(() => expect(global.fetch).toHaveBeenCalled())
+  const calledWith = global.fetch.mock.calls[global.fetch.mock.calls.length - 1][0]
+  expect(String(calledWith)).toContain('include_comments=true')
   })
 })

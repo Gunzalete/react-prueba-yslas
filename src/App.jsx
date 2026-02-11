@@ -136,6 +136,17 @@ function PostList({ posts, meta, publishErrors, onPublish, isLoading, isError, o
             )}
           </div>
           {publishErrors[post.id] ? <div className="field-error" style={{ marginTop: '8px' }}>{publishErrors[post.id]}</div> : null}
+
+          {post.comments && post.comments.length > 0 ? (
+            <ul className="comment-list" style={{ marginTop: 8 }}>
+              {post.comments.map((c, idx) => (
+                <li key={c.id ?? idx}>
+                  <strong style={{ fontSize: '0.85rem' }}>{c.author || c.name || 'Anon'}</strong>
+                  <span style={{ fontSize: '0.85rem' }}>{c.body ?? c.content ?? c.text ?? JSON.stringify(c)}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </li>
       ))}
     </ul>

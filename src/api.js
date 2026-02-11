@@ -45,7 +45,7 @@ async function createPost(payload) {
 }
 
 export function usePosts(filters, page) {
-  return useQuery(['posts', filters, page], () => fetchPosts(filters, page), {
+  return useQuery(['posts', JSON.stringify(filters), page], () => fetchPosts(filters, page), {
     keepPreviousData: true,
   })
 }
