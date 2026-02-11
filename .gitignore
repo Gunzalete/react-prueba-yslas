@@ -1,0 +1,32 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+.vite/
+out/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Tests / coverage
+coverage/
+coverage-report/
+.vitest/
+
+# Misc
+*.log
+*.tgz
