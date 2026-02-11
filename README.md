@@ -23,8 +23,9 @@ Se incluye un Dockerfile y `docker-compose.yml` para facilitar pruebas locales.
 
 - Levantar el contenedor:
 
-
+```
 docker compose up -d --build
+```
 
 
 - La UI quedará disponible en `http://127.0.0.1:5173`
