@@ -59,5 +59,10 @@ npm test
 	- Render básico de la aplicación: se monta la UI dentro de un `QueryClientProvider` y se verifica que componentes principales (cabecera, estado de listado vacío, formulario de creación) se renderizan correctamente.
 	- El test mockea `fetch` para devolver una respuesta vacía ({ data: [], meta: { total: 0 } }).
 
+## Qué mejoraría con más tiempo
 
+- Formulario de comentarios: añadir un formulario para crear comentarios con validaciones en línea, previews y feedback inmediato al usuario.
 
+- Documentación de API: publicar un contrato OpenAPI/Swagger para facilitar consumo, generación de clientes y pruebas automáticas.
+
+- Migración a TypeScript: tipado estricto, mejor autocompletado y refactors más seguros para mejorar la mantenibilidad.
