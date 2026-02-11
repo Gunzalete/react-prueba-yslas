@@ -9,7 +9,7 @@ UI de prueba tecnica para listar, filtrar y crear posts contra la API de Laravel
 
 ## Configuracion
 
-1) Crear un archivo `.env` en la raiz con la URL de la API:
+Crear un archivo `.env` en la raiz con la URL de la API:
 
 ```
 VITE_API_BASE_URL=http://0.0.0.0:8000
@@ -29,20 +29,6 @@ docker compose up -d --build
 
 - La UI quedará disponible en `http://127.0.0.1:5173`
 
-
-2) Instalar dependencias:
-
-```
-npm install
-```
-
-## Ejecutar
-
-```
-npm run dev
-```
-
-La app levanta en `http://127.0.0.1:5173`.
 
 ## Funcionalidades
 
