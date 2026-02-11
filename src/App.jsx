@@ -264,15 +264,7 @@ export default function App() {
           <h1>Posts y comentarios</h1>
           <p className="hero-subtitle">Filtra, revisa y crea contenido. Conectado a la API de Laravel.</p>
         </div>
-        <div className="hero-card">
-          <div>
-            <span className="hero-label">API</span>
-            <strong>{API_BASE}</strong>
-          </div>
-          <p>
-            Estado: <span className="status-pill">En linea</span>
-          </p>
-        </div>
+  {/* hero-card removed: API URL and status hidden */}
       </header>
 
       <main className="grid">
